@@ -8,7 +8,7 @@
 
 using namespace std;
 
-void testRecipe()
+Recipe getRecipe() 
 {
 	Recipe r(string("Grilled Cheese"));
 	r.addIngredient(Ingredient(string("Bread"), 2, string("Slice")));
@@ -20,7 +20,17 @@ void testRecipe()
 	r.addStep(string("Place Cheese between bread, butter side out"));
 	r.swapSteps(2,3);
 
+	return r;
+}
+
+void testRecipe()
+{
+	cout << "Begin Recipe Test" << endl;
+	cout << "--------" << endl;
+	Recipe r = getRecipe();
 	cout << r << endl;
+	cout << "--------" << endl;
+	cout << "End Recipe Test" << endl;
 }
 
 #endif //TEST_RECIPE_H
